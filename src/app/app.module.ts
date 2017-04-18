@@ -15,6 +15,8 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
