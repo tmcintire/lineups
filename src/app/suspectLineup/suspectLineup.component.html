@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center">Photo Lineup</h1>
+  <div class="lineup-results">
+    <div class="photo-div" *ngFor="let photo of photos; let i = index"  [class.active]="i == selectedImage" (click)="highlightImage(i)">
+      <img class="lineup-photo" src="{{photo}}" />
+    </div>
+  </div>
+
+  <div [hidden]="!showSignature" class="signature-pad">
+    <h3 class='text-center'>Witness Signature</h3>
+    <div class="signature">
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    </div>
+    <button (click)="submitLineup()" class="btn btn-primary">Submit</button>
+  </div>
+</div>

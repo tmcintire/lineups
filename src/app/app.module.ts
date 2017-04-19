@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import {
   NgModule,
   ApplicationRef
@@ -15,8 +16,8 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignaturePadModule } from 'angular2-signaturepad';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -26,10 +27,16 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
+import { LineupComponent } from './lineup';
 import { AboutComponent } from './about';
+import { HomeComponent } from './home';
+import { SuspectLineupComponent } from './suspectLineup';
+import { LineupSubmittedComponent } from './lineupSubmitted';
+import { CompositeComponent } from './composite';
+import { VerifyComponent } from './verify';
+import { VerifyResultsComponent } from './verify-results';
+import { CompositeResultsComponent } from './composite-results';
 import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -53,16 +60,23 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
     HomeComponent,
+    AboutComponent,
+    LineupComponent,
+    SuspectLineupComponent,
+    LineupSubmittedComponent,
+    CompositeComponent,
+    VerifyComponent,
+    VerifyResultsComponent,
+    CompositeResultsComponent,
     NoContentComponent,
-    XLargeDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    SignaturePadModule,
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

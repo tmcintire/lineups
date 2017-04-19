@@ -1,33 +1,8 @@
-/* this file will be extracted to main dist folder and is imported in index.html */
-/* This file is for setting global styles  */
-@import 'variables';
-@import '~bootstrap/scss/bootstrap.scss';
-
-nav {
-  margin-top: 16px;
-}
-
-nav a {
-  background-color: $nav-button-color;
-  color: white;
-  padding: 8px 16px;
-  margin: 8px;
-  vertical-align: middle;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-  width: 33%;
-}
-
-.container {
-  margin-top: 20px;
-}
-
 /*styles for home content only*/
 .lineup-results {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .lineup-photo {
@@ -35,41 +10,43 @@ nav a {
   width: auto;
 }
 
-.suspect-photo {
-  height: 500px;
-  width: auto;
-  box-shadow: 2px 4px 12px 1px black;
-}
-
 .photo-div {
-    padding: 10px;
+    padding: 15px;
 }
 
 .suspect-div {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .suspect-photo-container {
+  border: 1px solid black;
   padding: 5px;
-  height: 570px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.gen-btn {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
 }
 
 .input-photo {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.input-photo label {
-  margin-right: 20px;
+.active {
+  border: 2px solid blue;
+  border-radius: 48px;
+}
+
+.signature {
+  margin: 15px;
+  border: 1px solid black;
+  height: 172px;
+}
+
+.signature-pad {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');

@@ -1,0 +1,10 @@
+<div class='container'>
+  <h1 class="text-center">Search Results</h1>
+
+  <div class="results-container">
+    <div class="verify-results" *ngFor="let photo of photos">
+      <img src="{{photo.url}}" />
+      <p><strong>Confidence:</strong> {{ photo.confidence }}</p>
+    </div>
+  </div>
+</div>

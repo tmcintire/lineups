@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">Verify an Identity</h1>
+
+  <hr>
+
+  <div class="suspect-div">
+    <div class="input-photo">
+      <label><strong>Suspect Photo</strong></label>
+      <input name="file" type="file" (change)="inputPhoto($event)" />
+    </div>
+  </div>
+
+  <div class="suspect-photo-container">
+    <h3>Suspect Photo</h3>
+    <img [hidden]="!suspectPhoto" class="suspect-photo" src="{{suspectPhoto}}" />
+  </div>
+
+  <div class="gen-btn">
+    <button class="btn btn-lg btn-primary" (click)="submitPhoto()">Search Photos for Suspect</button>
+  </div>
+
+  <div [hidden]="!showLoading" class="text-center loading">
+    <span>L</span>
+    <span>o</span>
+    <span>a</span>
+    <span>d</span>
+    <span>i</span>
+    <span>n</span>
+    <span>g</span>
+  </div>
+</div>

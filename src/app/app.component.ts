@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppState } from './app.service';
 
 /*
@@ -19,26 +20,19 @@ import { AppState } from './app.service';
     './app.component.css'
   ],
   template: `
-    <nav>
-      <a [routerLink]=" ['./'] "
+    <h1>Your Face</h1>
+    <nav class="flex-row">
+      <a [routerLink]=" ['./lineup'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
+        Lineup
       </a>
-      <a [routerLink]=" ['./home'] "
+      <a [routerLink]=" ['./composite'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
+        Composite
       </a>
-      <a [routerLink]=" ['./detail'] "
+      <a [routerLink]=" ['./verify'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        About
+        Verify
       </a>
     </nav>
 
@@ -46,16 +40,6 @@ import { AppState } from './app.service';
       <router-outlet></router-outlet>
     </main>
 
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-    <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
-    </footer>
   `
 })
 export class AppComponent implements OnInit {
@@ -64,11 +48,16 @@ export class AppComponent implements OnInit {
   public url = 'https://twitter.com/AngularClass';
 
   constructor(
-    public appState: AppState
+    public appState: AppState,
+    public router: Router,
   ) {}
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
+  }
+
+  public lineupCreation() {
+    this.router.navigate(['/inputphoto', 'lineup']);
   }
 
 }
